@@ -1,0 +1,11 @@
+javac net/cheng/Add.java		//compile net/cheng/Add.java and generate net/cheng/Add.class
+javac -d tmp/ net/cheng/Add.java	//compile net/cheng/Add.java and generate tm/net/cheng/Add.class, so -d specify the output dir
+jar cvf ./tmp/add.jar net/cheng/Add.class
+jar cvf apple.jar Test.class audio video //Test.class and two dirs audio and video are archived into alibaba.jar
+jar cvf alibaba.jar com			//com is the dir contains all classes
+jar cfmv liko.jar Manifest.txt com net	//com, net and Manifest.txt are archived into liko.jar. Manifest.txt specify the application entry point(the class with main function)
+jar xvf alibaba.jar
+java -cp .:tmp/* com.alibaba.Test 	//.:tmp/* means the java.class.path includes current dir . and all jar files in tmp/ ; Alternatively you can specify shell variaty: export CLASSPATH=.:tmp/*
+java class_file or jar_file arg0 arg1 arg2 ...	//pass args to main function
+java -Xbootclasspath/a:/Users/likoguan/IdeaProjects/liko/classpath/lib/cn.jar -jar liko.jar	//Java 命令行提供了如何扩展bootStrap 级别class的简单方法. -Xbootclasspath/a: 后缀在核心class搜索路径后面.常用!!!   -Xbootclasspath/p: 前缀在核心class搜索路径前面.不常用,避免引起不必要的冲突.		-Xbootclasspath:     完全取代基本核心的Java class 搜索路径.不常用,否则要重新写所有Java 核心class
+javac -classpath ../lib2/cn.jar -d ../lib com/alibaba/Test.java com/guan/Hello.java net/cheng/Add.java

@@ -1,0 +1,3 @@
+Main-Class: net.latipay.MainApp
+Class-Path: apple.jar google.jar search.jar
+

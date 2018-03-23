@@ -1,0 +1,3 @@
+Main-Class: com.alibaba.Test
+Class-Path: /Users/likoguan/IdeaProjects/liko/classpath/lib/cn.jar
+
